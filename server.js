@@ -30,7 +30,7 @@ app.use(express.static("public"));
 // Connect to the Mongo DB
 mongoose.Promise = global.Promise
 let MONGO_URL
-	mongoose.connect("mongodb://heroku_0m6tgg65:fvhn9h5msjhmamo199uk8hu0op@ds223161.mlab.com:23161/heroku_0m6tgg65"); // local mongo url
+	mongoose.connect("mongodb://heroku_vh295m4f:n93v1imccarbclmabofrd6d9t0@ds121301.mlab.com:21301/heroku_vh295m4f"); // local mongo url
 	var dbConnection = mongoose.connection
 
 // Routes
