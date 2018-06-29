@@ -12,7 +12,7 @@ var cheerio = require("cheerio");
 // Require all models
 var db = require("./models");
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 // Initialize Express
 var app = express();
@@ -28,10 +28,10 @@ app.use(express.static("public"));
 
 // By default mongoose uses callbacks for async queries, we're setting it to use promises (.then syntax) instead
 // Connect to the Mongo DB
-mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/week18Populater", {
-  useMongoClient: true
-});
+mongoose.Promise = global.Promise
+let MONGO_URL
+	mongoose.connect("mongodb://heroku_0m6tgg65:fvhn9h5msjhmamo199uk8hu0op@ds223161.mlab.com:23161/heroku_0m6tgg65"); // local mongo url
+	var dbConnection = mongoose.connection
 
 // Routes
 
